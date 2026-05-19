@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- ✏️ MODIFICA: cambia il titolo con il tuo nome -->
+  <title>Mirko Marco Pazzi — Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css.css">
+  <script defer src="js.js"></script>
+</head>
+
+<body>
+
+  <!-- NAVIGAZIONE -->
+  <nav>
+    <ul>
+      <!-- ✏️ puoi cambiare le voci del menu -->
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#chi-sono">Chi sono</a></li>
+      <li><a href="#competenze">Competenze</a></li>
+      <li><a href="#progetti">Progetti</a></li>
+      <li><a href="#percorso">Percorso</a></li>
+      <li><a href="#contatti">Contatti</a></li>
+      <li><a href="#cv">CV</a></li>
+      <li><a href="./stage.html">Stage</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ==========================================
+         HERO — presentazione iniziale
+         ========================================== -->
+    <section id="hero">
+      <p class="etichetta">Portfolio</p>
+
+      <!-- ✏️ MODIFICA: il tuo nome e cognome -->
+      <h1>Mirko Marco Pazzi</h1>
+
+      <!-- ✏️ MODIFICA: una frase breve su di te -->
+      <p class="sottotitolo">
+        Studente di Operatore Informatico al terzo anno. Appassionato di programmazione,
+        reti e tutto ciò che si può costruire con il codice.
+      </p>
+
+      <!-- ✏️ MODIFICA: le parole chiave che ti descrivono -->
+      <div class="tag-list">
+        <span class="tag">Python</span>
+        <span class="tag">Web Design</span>
+        <span class="tag">Arduino</span>
+        <span class="tag">Reti</span>
+        <span class="tag">Milano</span>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CHI SONO
+         ========================================== -->
+    <section id="chi-sono">
+      <p class="etichetta">Chi sono</p>
+      <h2>Informazioni personali</h2>
+
+      <!-- ✏️ MODIFICA: scrivi qualcosa su di te -->
+      <p style="margin-top: 16px;">
+        Mi chiamo Mirko Pazzi, ho 17 anni e frequento il terzo anno
+        dell'indirizzo Informatica. Sono curioso,
+        mi piace risolvere problemi e imparare cose nuove.
+        Nel tempo libero mi piace giocare a videogiochi .
+      </p>
+
+      <div class="griglia-2col" style="margin-top: 40px;">
+        <div>
+          <!-- ✏️ MODIFICA: le tue informazioni -->
+          <div class="info-riga">
+            <span>Nome</span>
+            <span>Mirko Pazzi</span>
+          </div>
+          <div class="info-riga">
+            <span>Età</span>
+            <span>17 anni (17/12/2008)</span>
+          </div>
+          <div class="info-riga">
+            <span>Città</span>
+            <span>Milano</span>
+          </div>
+          <div class="info-riga">
+            <span>Lingue</span>
+            <span>Italiano, Inglese</span>
+          </div>
+        </div>
+        <div>
+          <div class="info-riga">
+            <span>Scuola</span>
+            <span>Immaginazione e Lavoro</span>
+          </div>
+          <div class="info-riga">
+            <span>Indirizzo</span>
+            <span>Informatica</span>
+          </div>
+          <div class="info-riga">
+            <span>Anno</span>
+            <span>Terzo anno</span>
+          </div>
+          <div class="info-riga">
+            <span>Email</span>
+            <span>mirko.pazzi@edu.immaginazioneelavoro.it</span>
+          </div>
+          <div class="info-riga">
+            <span>Anno scolastico</span>
+            <span>2025 / 2026</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         COMPETENZE
+         ========================================== -->
+    <section id="competenze">
+      <p class="etichetta">Competenze</p>
+      <h2>Cosa so fare</h2>
+      <p style="margin-top: 8px;">
+        Le competenze tecniche acquisite durante l'anno scolastico.
+      </p>
+
+      <!-- ✏️ MODIFICA: le tue competenze e il livello (da 0% a 100%) -->
+      <div class="competenze-griglia">
+
+        <div class="competenza-card" data-skill="html">
+          <div class="competenza-header">
+            <h3>HTML / CSS</h3>
+            <span class="competenza-pct">70%</span>
+          </div>
+          <div class="barra-contenitore">
+            <div class="barra" style="width: 70%"></div>
+          </div>
+          <p class="livello-label">Intermedio</p>
+        </div>
+
+        <div class="competenza-card" data-skill="python">
+          <div class="competenza-header">
+            <h3>Python</h3>
+            <span class="competenza-pct">75%</span>
+          </div>
+          <div class="barra-contenitore">
+            <div class="barra" style="width: 75%"></div>
+          </div>
+          <p class="livello-label">Base / Intermedio</p>
+        </div>
+
+        <div class="competenza-card" data-skill="arduino">
+          <div class="competenza-header">
+            <h3>Arduino</h3>
+            <span class="competenza-pct">40%</span>
+          </div>
+          <div class="barra-contenitore">
+            <div class="barra" style="width: 40%"></div>
+          </div>
+          <p class="livello-label">Base</p>
+        </div>
+
+        <div class="competenza-card" data-skill="reti">
+          <div class="competenza-header">
+            <h3>Reti</h3>
+            <span class="competenza-pct">45%</span>
+          </div>
+          <div class="barra-contenitore">
+            <div class="barra" style="width: 45%"></div>
+          </div>
+          <p class="livello-label">Base</p>
+        </div>
+
+        <div class="competenza-card" data-skill="sistemi">
+          <div class="competenza-header">
+            <h3>Sistemi operativi</h3>
+            <span class="competenza-pct">55%</span>
+          </div>
+          <div class="barra-contenitore">
+            <div class="barra" style="width: 55%"></div>
+          </div>
+          <p class="livello-label">Base</p>
+        </div>
+
+        <div class="competenza-card" data-skill="javascript">
+          <div class="competenza-header">
+            <h3>JavaScript</h3>
+            <span class="competenza-pct">35%</span>
+          </div>
+          <div class="barra-contenitore">
+            <div class="barra" style="width: 35%"></div>
+          </div>
+          <p class="livello-label">Base</p>
+        </div>
+
+      </div>
+
+      <!-- MODAL COMPETENZA -->
+      <div class="skill-modal-overlay" id="skillModal">
+        <div class="skill-modal">
+          <div class="skill-modal-header">
+            <div>
+              <p class="skill-modal-livello" id="modalLivello"></p>
+              <h2 id="modalTitolo"></h2>
+            </div>
+            <button class="skill-modal-chiudi" id="modalChiudi">✕</button>
+          </div>
+          <div class="skill-modal-corpo">
+            <p class="skill-modal-desc" id="modalDesc"></p>
+            <ul class="skill-modal-lista" id="modalLista"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         PROGETTI
+         ========================================== -->
+    <section id="progetti">
+      <p class="etichetta">Progetti</p>
+      <h2>Cosa ho realizzato</h2>
+      <p style="margin-top: 8px;">
+        I progetti sviluppati durante l'anno scolastico.
+      </p>
+
+      <div class="progetti-lista">
+
+        <!-- PROGETTO 1 — ✏️ MODIFICA con il tuo progetto -->
+        <div class="progetto-card">
+          <div class="progetto-immagine">
+            <img src="IMG/Screenshot 2026-05-19 094008.png" alt="">
+          </div>
+          <div class="progetto-corpo">
+            <h2>OFFLINE v4</h2>
+            
+            <!-- Nuovo contenitore per l'animazione -->
+            <div class="descrizione-wrapper">
+              <p class="descrizione-progetto">
+                Gioco arcade top-down in stile retro/cyberpunk, sviluppato interamente in 
+                HTML5 Canvas vanilla. Controlla <strong>Kimoto</strong>, un'entità digitale 
+                che combatte ondate di nemici in biomi generati proceduralmente. 
+                Sistema di upgrade a doppio negozio (normale e oscuro), combo, boss, 
+                leaderboard locale e atmosfera glitch distopica.
+              </p>
+            </div>
+            
+            <div class="progetto-meta">
+              <span class="badge">HTML5</span>
+              <span class="badge">JavaScript</span>
+              <span class="badge">Canvas API</span>
+              <span class="badge">Game Dev</span>
+            </div>
+            <a href="MORE/offline_v4.html" class="progetto-link">→ Gioca ora</a>
+          </div>
+        </div>
+
+        <!-- PROGETTO 2 — ✏️ MODIFICA con il tuo progetto -->
+        <div class="progetto-card">
+          <div class="progetto-immagine">[ immagine progetto ]</div>
+          <div class="progetto-corpo">
+            <h2>Nome del progetto</h2>
+            <p style="margin-top: 8px;">
+              Descrizione breve del progetto.
+            </p>
+            <div class="progetto-meta">
+              <span class="badge">Arduino</span>
+              <span class="badge">C++</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ✏️ copia un blocco qui sopra per aggiungere altri progetti -->
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CV
+         ========================================== -->
+    <section id="cv">
+      <p class="etichetta">Curriculum Vitae</p>
+      <h2>Il mio CV</h2>
+      <p style="margin-top: 8px;">
+        Formazione, esperienze e competenze in formato sintetico.
+      </p>
+
+      <!-- BOTTONE DOWNLOAD PDF -->
+      <div class="cv-download-bar">
+        <p>Scarica la versione completa in PDF.</p>
+        <!-- ✏️ MODIFICA: sostituisci "cv.pdf" con il nome del tuo file PDF -->
+        <a href="MORE/MIRKO MARCO PAZZI - CV.pdf" download="MORE/MORE/MIRKO MARCO PAZZI - CV.pdf" class="btn-scarica">
+          ↓ &nbsp;Scarica CV (PDF)
+        </a>
+      </div>
+
+      <!-- FORMAZIONE -->
+      <div class="cv-blocco">
+        <p class="cv-blocco-titolo">Formazione</p>
+
+        <!-- ✏️ MODIFICA: il tuo percorso scolastico -->
+        <div class="cv-riga">
+          <span class="cv-periodo">2023 – oggi</span>
+          <div class="cv-contenuto">
+            <h3>Operatore Informatico — Qualifica III livello europeo</h3>
+            <span class="cv-luogo">Immaginazione e Lavoro — Via Privata Miramare 15, Milano</span>
+            <p>Corso triennale ad indirizzo Informatica. Coding, CMS, Software, Hardware, Reti e Sistemi.</p>
+          </div>
+        </div>
+
+        <div class="cv-riga">
+          <span class="cv-periodo">2019 – 2023</span>
+          <div class="cv-contenuto">
+            <h3>Licenza Media</h3>
+            <span class="cv-luogo">IC Statale Jacopo Barozzi — Via Carlo Vittadini 10, Milano</span>
+            <p></p>
+          </div>
+        </div>
+
+        <!-- ✏️ aggiungi altri blocchi copiando una cv-riga -->
+      </div>
+
+      <!-- ESPERIENZE -->
+      <div class="cv-blocco">
+        <p class="cv-blocco-titolo">Esperienze</p>
+
+        <!-- ✏️ MODIFICA: aggiungi stage, lavori, volontariato, ecc. -->
+        <div class="cv-riga">
+          <span class="cv-periodo">Mar – Mag 2025</span>
+          <div class="cv-contenuto">
+            <h3>Stagista curriculare</h3>
+            <span class="cv-luogo">Prestige Group Srl — Via Campania 7, Segrate (MI)</span>
+            <p>Riparazione hardware di computer. Test e ricondizionamento di PC per la vendita al pubblico.</p>
+          </div>
+        </div>
+
+        <div class="cv-riga">
+          <span class="cv-periodo">Nov 2025 – Mar 2026</span>
+          <div class="cv-contenuto">
+            <h3>Stagista curriculare</h3>
+            <span class="cv-luogo">IN SERVIZI IT SRL — Via Giuseppe Prina 15, Milano</span>
+            <p>Preparazione computer ad uso aziendale. Sistemazione di server e cavi di rete per switch. Programmazione di NAS (Qnap).</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMPETENZE TECNICHE -->
+      <div class="cv-blocco">
+        <p class="cv-blocco-titolo">Competenze tecniche</p>
+        <!-- ✏️ MODIFICA: le tue competenze -->
+        <div class="cv-skill-lista">
+          <span class="cv-skill">Python</span>
+          <span class="cv-skill">HTML / CSS</span>
+          <span class="cv-skill">Arduino (C++)</span>
+          <span class="cv-skill">Pygame</span>
+          <span class="cv-skill">Reti TCP/IP</span>
+          <span class="cv-skill">Linux</span>
+          <span class="cv-skill">Windows</span>
+          <span class="cv-skill">Office / LibreOffice</span>
+        </div>
+      </div>
+
+      <!-- LINGUE -->
+      <div class="cv-blocco">
+        <p class="cv-blocco-titolo">Lingue</p>
+
+        <div class="cv-riga">
+          <span class="cv-periodo">Italiano</span>
+          <div class="cv-contenuto">
+            <h3>Madrelingua</h3>
+          </div>
+        </div>
+
+        <div class="cv-riga">
+          <span class="cv-periodo">Inglese</span>
+          <div class="cv-contenuto">
+            <!-- ✏️ MODIFICA: il tuo livello -->
+            <h3>Livello B1 — scolastico</h3>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==========================================
+         CONTATTI
+         ========================================== -->
+    <section id="contatti">
+      <p class="etichetta">Contatti</p>
+      <h2>Dove trovarmi</h2>
+      <p style="margin-top: 8px;">
+        Puoi contattarmi tramite email o trovare i miei lavori online.
+      </p>
+
+      <div class="contatti-lista">
+
+        <!-- ✏️ MODIFICA: la tua email -->
+        <a href="mailto:mirko.pazzi08@gmail.com" class="contatto-riga">
+          <span class="contatto-icona">Email</span>
+          <span>mirko.pazzi08@gmail.com</span>
+        </a>
+
+        <a href="mailto:mirko.pazzi@edu.immaginazioneelavoro.it" class="contatto-riga">
+          <span class="contatto-icona">Email scuola</span>
+          <span>mirko.pazzi@edu.immaginazioneelavoro.it</span>
+        </a>
+
+        <a href="https://github.com/gameword444" class="contatto-riga" target="_blank">
+          <span class="contatto-icona">GitHub</span>
+          <span>github.com/gameword444</span>
+        </a>
+
+        <a href="https://leetcode.com/u/c7Qf1bFks7/" class="contatto-riga leetcode-riga" target="_blank">
+          <span class="contatto-icona">Leet Code</span>
+          
+          <div class="leetcode-box">
+            <div class="leetcode-testo">
+              <span class="leetcode-url">leetcode.com/0kr1m</span>
+              <!-- Modifica questo numero quando risolvi nuovi problemi -->
+              <span class="leetcode-conteggio"><strong>3</strong> / 3935</span>
+            </div>
+            <!-- Barra dei progressi -->
+            <div class="leetcode-barra-sfondo">
+              <!-- Modifica la percentuale (es. width: 10%) per allungare la barra -->
+              <div class="leetcode-barra-riempimento" style="width: 1%;"></div>
+            </div>
+          </div>
+        </a>
+
+        
+
+
+        <!-- ✏️ aggiungi altri link (LinkedIn, ecc.) copiando il blocco sopra
+             oppure cancella quelli che non usi -->
+
+      </div>
+    </section>
+
+    
+
+  </main>
+
+    <footer>
+    <!-- ✏️ MODIFICA: il tuo nome -->
+    © 2026 Mirko Marco Pazzi — Portfolio scolastico
+  </footer>
+
+</body>
+</html>
