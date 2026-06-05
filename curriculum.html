@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirko | Curriculum Vitae</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --nero:       #0a0c10;
+            --grigio-sc:  #161b22;
+            --grigio-md:  #21262d;
+            --grigio-ch:  #8b949e;
+            --blu-sc:     #0d2137;
+            --blu-md:     #0a4b78;
+            --blu-ch:     #58a6ff;
+            --blu-acc:    #79c0ff;
+            --bordo:      #30363d;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--nero);
+            color: #e6edf3;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        /* ─── NAVBAR ─── */
+        .navbar-custom {
+            background-color: rgba(10,12,16,0.95);
+            border-bottom: 1px solid var(--bordo);
+            backdrop-filter: blur(12px);
+            padding: 14px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-brand {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--blu-ch) !important;
+            letter-spacing: 3px;
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: var(--grigio-ch);
+            text-decoration: none;
+            font-size: 0.82rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--blu-ch);
+            background: rgba(88,166,255,0.08);
+        }
+
+        /* ─── HERO ─── */
+        .cv-hero {
+            background: linear-gradient(135deg, var(--nero) 0%, var(--blu-sc) 60%, var(--grigio-sc) 100%);
+            border-bottom: 1px solid var(--bordo);
+            padding: 70px 0 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cv-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(88,166,255,0.03) 40px, rgba(88,166,255,0.03) 41px),
+                repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(88,166,255,0.03) 40px, rgba(88,166,255,0.03) 41px);
+        }
+
+        .hero-tag {
+            font-size: 0.72rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--blu-ch);
+            margin-bottom: 12px;
+        }
+
+        .hero-name {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            font-weight: 700;
+            letter-spacing: 6px;
+            line-height: 1;
+            color: #fff;
+        }
+
+        .hero-role {
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            color: var(--blu-acc);
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        .hero-divider {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--blu-ch), transparent);
+            margin: 24px 0;
+        }
+
+        /* ─── DOWNLOAD BTN ─── */
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--blu-md), var(--blu-sc));
+            border: 1px solid var(--blu-ch);
+            color: var(--blu-ch);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 12px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.25s;
+            cursor: pointer;
+        }
+
+        .btn-download:hover {
+            background: linear-gradient(135deg, var(--blu-ch), var(--blu-md));
+            color: #fff;
+            box-shadow: 0 0 20px rgba(88,166,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        .btn-download svg { flex-shrink: 0; }
+
+        /* ─── LAYOUT ─── */
+        .cv-main {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 0;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+
+        @media (max-width: 768px) {
+            .cv-main { grid-template-columns: 1fr; }
+        }
+
+        /* ─── SIDEBAR ─── */
+        .cv-sidebar {
+            padding-right: 40px;
+            border-right: 1px solid var(--bordo);
+        }
+
+        .cv-photo {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--blu-ch);
+            display: block;
+            margin: 0 auto 28px;
+            box-shadow: 0 0 30px rgba(88,166,255,0.25);
+        }
+
+        .sidebar-section { margin-bottom: 36px; }
+
+        .sidebar-label {
+            font-size: 0.68rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--blu-ch);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sidebar-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--bordo);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.78rem;
+            color: var(--grigio-ch);
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .contact-item svg { color: var(--blu-ch); flex-shrink: 0; }
+
+        .skill-bar-wrap { margin-bottom: 14px; }
+
+        .skill-name {
+            font-size: 0.75rem;
+            color: #e6edf3;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .skill-name span { color: var(--grigio-ch); }
+
+        .skill-bar {
+            height: 3px;
+            background: var(--grigio-md);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .skill-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--blu-md), var(--blu-ch));
+            border-radius: 2px;
+            animation: fillBar 1.2s ease forwards;
+            transform-origin: left;
+        }
+
+        @keyframes fillBar {
+            from { width: 0; }
+        }
+
+        .lang-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid var(--bordo);
+            background: var(--grigio-md);
+            color: #e6edf3;
+            border-radius: 4px;
+            padding: 6px 12px;
+            font-size: 0.75rem;
+            margin: 4px 4px 4px 0;
+        }
+
+        .lang-level {
+            font-size: 0.65rem;
+            color: var(--blu-ch);
+            letter-spacing: 1px;
+        }
+
+        /* ─── MAIN CONTENT ─── */
+        .cv-content { padding-left: 40px; }
+
+        .section-title {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--blu-ch);
+            margin-bottom: 24px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--bordo);
+        }
+
+        .cv-section { margin-bottom: 44px; }
+
+        /* timeline */
+        .timeline { position: relative; padding-left: 24px; }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            bottom: 0;
+            width: 1px;
+            background: linear-gradient(180deg, var(--blu-ch), transparent);
+        }
+
+        .tl-item {
+            position: relative;
+            margin-bottom: 28px;
+        }
+
+        .tl-item::before {
+            content: '';
+            position: absolute;
+            left: -28px;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--blu-ch);
+            box-shadow: 0 0 10px rgba(88,166,255,0.5);
+        }
+
+        .tl-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 6px;
+        }
+
+        .tl-role {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .tl-date {
+            font-size: 0.7rem;
+            color: var(--grigio-ch);
+            border: 1px solid var(--bordo);
+            padding: 2px 8px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .tl-company {
+            font-size: 0.78rem;
+            color: var(--blu-acc);
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .tl-desc {
+            font-size: 0.78rem;
+            color: var(--grigio-ch);
+            line-height: 1.7;
+        }
+
+        /* bio box */
+        .bio-box {
+            background: var(--grigio-sc);
+            border: 1px solid var(--bordo);
+            border-left: 3px solid var(--blu-ch);
+            padding: 20px 24px;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.82rem;
+            color: var(--grigio-ch);
+            line-height: 1.8;
+        }
+
+        /* ─── PERCORSO SCOLASTICO IMMAGINE ─── */
+        .school-img-wrap {
+            border: 1px solid var(--bordo);
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--grigio-sc);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .school-img-wrap img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            opacity: 0.85;
+            filter: saturate(0.6) brightness(0.9);
+            transition: all 0.3s;
+        }
+
+        .school-img-wrap:hover img {
+            opacity: 1;
+            filter: saturate(1) brightness(1);
+        }
+
+        .school-img-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px 14px;
+            background: linear-gradient(0deg, rgba(10,12,16,0.9), transparent);
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--blu-ch);
+        }
+
+        /* ─── FOOTER ─── */
+        .cv-footer {
+            background: var(--grigio-sc);
+            border-top: 1px solid var(--bordo);
+            text-align: center;
+            padding: 30px;
+            font-size: 0.72rem;
+            color: var(--grigio-ch);
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar-custom">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a href="index.html" class="nav-brand">MG</a>
+            <div class="nav-links d-flex gap-1">
+                <a href="index.html">Home</a>
+                <a href="pages/stage.html">Stage</a>
+                <a href="pages/extra.html">Extra</a>
+                <a href="curriculum.html" class="active">Curriculum</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="cv-hero">
+        <div class="container">
+            <p class="hero-tag">// curriculum vitae</p>
+            <h1 class="hero-name">MIRKO</h1>
+            <p class="hero-role">Operatore Informatico</p>
+            <div class="hero-divider"></div>
+            <a href="verifica.txt" download="CV_Mirko.txt" class="btn-download">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                </svg>
+                Scarica CV
+            </a>
+        </div>
+    </div>
+
+    <!-- BODY -->
+    <div class="cv-main">
+
+        <!-- SIDEBAR -->
+        <aside class="cv-sidebar">
+
+            <img src="MIRKO.jpg.jpeg" class="cv-photo" alt="Foto di Mirko">
+
+            <div class="sidebar-section">
+                <p class="sidebar-label">Contatti</p>
+                <div class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+                        <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                    </svg>
+                    Via Blablabla 32, Città
+                </div>
+                <div class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58z"/>
+                    </svg>
+                    +39 333 444 5555
+                </div>
+                <div class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1z"/>
+                    </svg>
+                    nome.cognome@email.com
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <p class="sidebar-label">Competenze</p>
+                <div class="skill-bar-wrap">
+                    <div class="skill-name">HTML / CSS <span>75%</span></div>
+                    <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+                </div>
+                <div class="skill-bar-wrap">
+                    <div class="skill-name">JavaScript <span>55%</span></div>
+                    <div class="skill-bar"><div class="skill-fill" style="width:55%"></div></div>
+                </div>
+                <div class="skill-bar-wrap">
+                    <div class="skill-name">Bootstrap <span>65%</span></div>
+                    <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
+                </div>
+                <div class="skill-bar-wrap">
+                    <div class="skill-name">C++ <span>40%</span></div>
+                    <div class="skill-bar"><div class="skill-fill" style="width:40%"></div></div>
+                </div>
+                <div class="skill-bar-wrap">
+                    <div class="skill-name">Manutenzione PC <span>80%</span></div>
+                    <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <p class="sidebar-label">Lingue</p>
+                <div>
+                    <span class="lang-pill">🇮🇹 Italiano <span class="lang-level">MADRELINGUA</span></span>
+                    <span class="lang-pill">🇬🇧 Inglese <span class="lang-level">A2</span></span>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- CONTENT -->
+        <main class="cv-content">
+
+            <div class="cv-section">
+                <p class="section-title">Chi sono</p>
+                <div class="bio-box">
+                    Sono Mirko, uno studente appassionato di informatica e tecnologia. Sto completando il percorso triennale come Operatore Informatico presso Immaginazione e Lavoro IEFP. Ho esperienza pratica in sviluppo web, manutenzione hardware e assistenza software acquisita durante il mio stage.
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <p class="section-title">Esperienza Lavorativa</p>
+                <div class="timeline">
+                    <div class="tl-item">
+                        <div class="tl-header">
+                            <span class="tl-role">Tecnico Informatico — Stage</span>
+                            <span class="tl-date">Mar 2024 → Mag 2024</span>
+                        </div>
+                        <div class="tl-company">Prestige Group</div>
+                        <p class="tl-desc">
+                            Riparazione hardware, assistenza software e manutenzione di PC e stampanti. Supporto agli utenti e gestione delle problematiche tecniche quotidiane all'interno dell'azienda.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <p class="section-title">Percorso Scolastico</p>
+
+                <!-- IMMAGINE PERCORSO SCOLASTICO -->
+                <div class="school-img-wrap">
+                    <img src="img/corso-informatica-programmazione.jpg" alt="Corso Informatica e Programmazione">
+                    <div class="school-img-overlay">// Informatica &amp; Programmazione</div>
+                </div>
+
+                <div class="timeline">
+                    <div class="tl-item">
+                        <div class="tl-header">
+                            <span class="tl-role">Operatore Informatico</span>
+                            <span class="tl-date">Set 2023 → Giu 2026</span>
+                        </div>
+                        <div class="tl-company">Immaginazione e Lavoro — IEFP</div>
+                        <p class="tl-desc">
+                            Percorso triennale di Istruzione e Formazione Professionale (IEFP) focalizzato sullo sviluppo web, la programmazione, la manutenzione hardware e l'assistenza tecnica informatica. Progetto finale: sito personale per la tesina di terza.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <p class="section-title">Progetti</p>
+                <div class="timeline">
+                    <div class="tl-item">
+                        <div class="tl-header">
+                            <span class="tl-role">Sito Personale</span>
+                            <span class="tl-date">2025 → 2026</span>
+                        </div>
+                        <div class="tl-company">HTML · CSS · Bootstrap · JavaScript</div>
+                        <p class="tl-desc">
+                            Sito personale multi-pagina realizzato come progetto finale del corso. Include pagina home, stage, curriculum e pagina extra con calcolatrice e calcolo assenze.
+                        </p>
+                    </div>
+                    <div class="tl-item">
+                        <div class="tl-header">
+                            <span class="tl-role">Esercizi C++</span>
+                            <span class="tl-date">2024</span>
+                        </div>
+                        <div class="tl-company">C++ · Logica di programmazione</div>
+                        <p class="tl-desc">
+                            Serie di esercizi in C++ su strutture condizionali, cicli while e operazioni matematiche, sviluppati durante il percorso formativo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOTTONE DOWNLOAD in fondo -->
+            <div style="border-top:1px solid var(--bordo); padding-top:30px; text-align:center;">
+                <p style="font-size:0.72rem;color:var(--grigio-ch);letter-spacing:2px;margin-bottom:16px;">// SCARICA IL CURRICULUM COMPLETO</p>
+                <a href="verifica.txt" download="CV_Mirko.txt" class="btn-download">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                    </svg>
+                    Scarica CV — Mirko
+                </a>
+            </div>
+
+        </main>
+    </div>
+
+    <footer class="cv-footer">
+        <span>© 2026 Mirko &nbsp;·&nbsp; Operatore Informatico &nbsp;·&nbsp; IEFP</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
